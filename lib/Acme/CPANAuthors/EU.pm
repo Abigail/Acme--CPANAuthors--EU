@@ -7,6 +7,20 @@ no  warnings 'syntax';
 
 our $VERSION = '2009102801';
 
+my @NATIONALITIES;
+
+BEGIN {
+    @NATIONALITIES = qw [Austrian French German Italian Portuguese];
+    foreach my $nat (@NATIONALITIES) {
+        eval "require Acme::CPANAuthors::$nat" or die $@;
+    }
+}
+
+use Acme::CPANAuthors::Register (
+   (map {"Acme::CPANAuthors::$_" -> authors} @NATIONALITIES),
+    ABIGAIL       =>   'Abigail',
+);
+
 
 1;
 
@@ -14,17 +28,37 @@ __END__
 
 =head1 NAME
 
-Acme::CPANAuthors::EU - Abstract
+Acme::CPANAuthors::EU - EU CPAN authors
 
 =head1 SYNOPSIS
 
+ use Acme::CPANAuthors;
+
+ my $authors  = Acme::CPANAuthors -> new ("EU");
+
+ my $number   = $authors -> count;
+ my @ids      = $authors -> id;
+ my @distros  = $authors -> distributions ("ABIGAIL");
+ my $url      = $authors -> avatar_url    ("ABIGAIL");
+ my $kwalitee = $authors -> kwalitee      ("ABIGAIL");
+ my $name     = $authors -> name          ("ABIGAIL");
+
+See documentation for Acme::CPANAuthors for more details.
+
 =head1 DESCRIPTION
 
-=head1 BUGS
+This class provides a hash of EU authors' PAUSE ID and name to
+the C<< Acme::CPANAuthors >> module.
+
+=head1 MAINTENANCE
+
+If you're EU CPAN author without further specified nationality,
+please send me your ID/name via email, and I may keep this module op
+to date.
 
 =head1 TODO
 
-=head1 SEE ALSO
+Add more countries if they become available.
 
 =head1 DEVELOPMENT
 

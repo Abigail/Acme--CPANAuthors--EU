@@ -1,0 +1,6 @@
+lib/Acme/CPANAuthors/EU.pm
+Makefile.PL
+MANIFEST
+t/000_basic.t
+Changes
+README

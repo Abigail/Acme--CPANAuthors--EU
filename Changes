@@ -1,3 +1,6 @@
+Version 2009110201
++ List requirements in Makefile.PL
+
 Version 2009102802
 + Mention prereqs in Makefile.PL
 + POD tests

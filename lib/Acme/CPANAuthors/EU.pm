@@ -5,12 +5,12 @@ use strict;
 use warnings;
 no  warnings 'syntax';
 
-our $VERSION = '2009110201';
+our $VERSION = '2010081801';
 
 my @NATIONALITIES;
 
 BEGIN {
-    @NATIONALITIES = qw [Austrian French German Italian Portuguese];
+    @NATIONALITIES = qw [Austrian British French German Italian Portuguese];
     foreach my $nat (@NATIONALITIES) {
         eval "require Acme::CPANAuthors::$nat" or die $@;
     }

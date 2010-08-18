@@ -14,6 +14,7 @@ my %args = (
     ABSTRACT_FROM        => 'lib/Acme/CPANAuthors/EU.pm',
     PREREQ_PM            => {'Acme::CPANAuthors::Register'   => 0,  
                              'Acme::CPANAuthors::Austrian'   => 0,
+                             'Acme::CPANAuthors::British'    => 0,
                              'Acme::CPANAuthors::French'     => 0,
                              'Acme::CPANAuthors::German'     => 0,
                              'Acme::CPANAuthors::Italian'    => 0,

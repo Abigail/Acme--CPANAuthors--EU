@@ -10,7 +10,7 @@ our $VERSION = '2010081801';
 my @NATIONALITIES;
 
 BEGIN {
-    @NATIONALITIES = qw [Austrian British French German Italian Portuguese];
+    @NATIONALITIES = qw [Austrian British French German Portuguese];
     foreach my $nat (@NATIONALITIES) {
         eval "require Acme::CPANAuthors::$nat" or die $@;
     }
